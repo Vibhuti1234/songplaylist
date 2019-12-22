@@ -1,5 +1,6 @@
 package com.mindtree.comicsbookapplication.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,8 +16,8 @@ public class SuperheroDto {
 	private int superheroId;
 	private String superheroName;
 	@JsonIgnore
-	private List<PowerDto> powers;
-    private ComicsDto comics;
+	private List<PowerDto> powers =new ArrayList<PowerDto>();
+    private ComicsDto comics=new ComicsDto();
 	public SuperheroDto() {
 		super();
 		// TODO Auto-generated constructor stub

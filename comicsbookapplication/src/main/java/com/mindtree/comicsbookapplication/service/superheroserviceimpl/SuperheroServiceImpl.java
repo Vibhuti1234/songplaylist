@@ -43,21 +43,22 @@ public class SuperheroServiceImpl  implements SuperheroService{
 
 		for (Superhero superhero : superheroes) {
 			List<Power> powers=superhero.getPowers();
-			Set<Power> powerSet=new HashSet<Power>(powers);
-			for(Power powerset : powerSet) {
-				if(powerset.getPowerName().equals("invisibility")||powerset.getPowerName().equals("flying"))
-				{
-					count++;
-					
-				}
-				if(count>=2)
-				{
-					superheroList.add(superhero);
-				}
-				count=0;
-				
+			Set<String> powerNames=new HashSet<String>();
+			
+			for(Power power : powers) {
+				powerNames.add(power.getPowerName());	
 			}
-		
+			for (String powername : powerNames) {
+             if(powername.equals("invisibility")||powername.equals("flying"))
+             {
+            	 count++;
+             }
+			}
+			if(count==2)
+			{
+				superheroList.add(superhero);
+			}
+		    count=0;
 
 		}
 		if(superheroList.size()==0)

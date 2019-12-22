@@ -4,7 +4,7 @@ public class PowerDto {
 	private int powerId;
 	private String powerName;
 	private int powerDamage;
-	private SuperheroDto superhero;
+	private SuperheroDto superhero=new SuperheroDto();
 	public PowerDto() {
 		super();
 		// TODO Auto-generated constructor stub

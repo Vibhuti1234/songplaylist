@@ -1,5 +1,6 @@
 package com.mindtree.comicsbookapplication.dto;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,7 @@ public class ComicsDto {
 	private String comicsName;
 	private String comicsUniverse;
 	@JsonIgnore
-	private Set<SuperheroDto> superheroes;
+	private Set<SuperheroDto> superheroes =new HashSet<SuperheroDto>();
 	public ComicsDto() {
 		super();
 		// TODO Auto-generated constructor stub

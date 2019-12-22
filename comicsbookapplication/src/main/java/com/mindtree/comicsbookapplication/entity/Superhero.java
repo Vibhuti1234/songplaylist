@@ -1,5 +1,6 @@
 package com.mindtree.comicsbookapplication.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -23,9 +24,9 @@ public class Superhero {
 	@Column(name="superheroName")
 	private String superheroName;
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="superhero")
-	private List<Power> powers;
+	private List<Power> powers =new ArrayList<Power>();
     @ManyToOne
-    private Comics comics;
+    private Comics comics=new Comics();
 	public Superhero() {
 		super();
 		// TODO Auto-generated constructor stub

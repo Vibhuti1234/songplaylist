@@ -1,13 +1,13 @@
 package com.mindtree.comicsbookapplication.exception;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-import com.mysql.fabric.xmlrpc.base.Data;
-
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+@RestControllerAdvice
 public class ExceptionHandler {
 	   
 	@org.springframework.web.bind.annotation.ExceptionHandler
@@ -18,7 +18,7 @@ public class ExceptionHandler {
 		
 		error.put("errorMessage", e.getMessage());
 		
-		error.put("time stamp", new Data());
+		error.put("time stamp", new Date());
 	
 		
 		return new ResponseEntity<Map<String,Object>>(error, HttpStatus.NOT_FOUND);

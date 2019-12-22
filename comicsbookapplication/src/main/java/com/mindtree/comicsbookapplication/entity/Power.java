@@ -21,7 +21,7 @@ public class Power {
 	@Column(name="powerDamage")
 	private int powerDamage;
 	@ManyToOne
-	private Superhero superhero;
+	private Superhero superhero=new Superhero();
 	public Power() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -1,5 +1,7 @@
 package com.mindtree.comicsbookapplication.entity;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -25,7 +27,7 @@ public class Comics {
 	@Column(name="comicsUniverse")
 	private String comicsUniverse;
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="comics")
-	private Set<Superhero> superheroes;
+	private Set<Superhero> superheroes=new HashSet<Superhero>();
 	public Comics() {
 		super();
 		// TODO Auto-generated constructor stub
