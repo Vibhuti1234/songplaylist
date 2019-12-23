@@ -1,0 +1,4 @@
+com\mindtree\airportmanagementsystem\entity\Flight.class
+com\mindtree\airportmanagementsystem\entity\Passenger.class
+com\mindtree\airportmanagementsystem\AirportmanagementsystemApplication.class
+com\mindtree\airportmanagementsystem\entity\Airport.class
