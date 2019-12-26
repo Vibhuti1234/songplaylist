@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,12 +28,12 @@ text-align: center;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h1>Add More Labs </h1>
+  <h1>Add Lab</h1>
   <hr>
   <div class="container">
-    <form action="/addLab" method="post">
+    <form action="/addLabToStudent" method="post">
      <div class="form-group">
-          <input type ="text" id="collegeName" name="collegeName" class="form-control" value="${collegeName}">
+          <input type ="number" id="studentId" name="studentId" class="form-control" value="${studentId}">
         </div>
         <div class="form-group">
         <label for="labName">Lab Name:</label>
@@ -44,11 +45,11 @@ text-align: center;
   </div>
   <br><br>
   <div class="container">
-   <h2>Click To Add Student By Giving Lab Id</h2>
-    <form action="/addStudent">
+    <form action="/" >
         <br><br>
-      <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> Add</button>
+      <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> HomePage</button>
     </form>
   </div>
+  
 </body>
 </html>

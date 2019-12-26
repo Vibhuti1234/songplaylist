@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@ header {
 text-align: center;
 }
 </style>
-<title >Add Lab</title>
+<title >Add College</title>
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
      <!-- jQuery library -->
@@ -27,25 +28,22 @@ text-align: center;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h1>Add More Labs </h1>
+  <h1>Add College</h1>
   <hr>
   <div class="container">
-    <form action="/addLab" method="post">
+    <form action="/addCollege" method="post">
      <div class="form-group">
-          <input type ="text" id="collegeName" name="collegeName" class="form-control" value="${collegeName}">
+        <label for="collegeName">College Name:</label>
+          <input type ="text" id="collegeName" name="collegeName" class="form-control" placeholder="Enter College Name">
         </div>
         <div class="form-group">
-        <label for="labName">Lab Name:</label>
-          <input type ="text" id="labName" name="labName" class="form-control" placeholder="Enter Lab Name">
+        <label for="collegeCapacity">College Capacity:</label>
+          <input type ="number" id="collegeCapacity" name="collegeCapacity" class="form-control" placeholder="Enter College Capacity" min="100" max="1000">
         </div>
-        <br><br>
-      <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> Add</button>
-    </form>
-  </div>
-  <br><br>
-  <div class="container">
-   <h2>Click To Add Student By Giving Lab Id</h2>
-    <form action="/addStudent">
+        <div class="form-group">
+          <label for="collegeLocation">College Location:</label>
+          <input type="text" id="collegeLocation" name="collegeLocation" class="form-control" placeholder="Enter College Location">
+        </div>
         <br><br>
       <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> Add</button>
     </form>

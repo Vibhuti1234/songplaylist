@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,10 +45,36 @@ text-align: center;
   </div>
   <br><br>
   <div class="container">
-   <h2>Click To Add Student By Giving Lab Id</h2>
-    <form action="/addStudent">
+    <form action="/displayLab" method="get">
         <br><br>
-      <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> Add</button>
+      <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> DisplayLab</button>
+    </form>
+  </div>
+  <br><br>
+  <div class="container">
+  <form action="/"  >
+     <div class="form-group">
+        <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Lab Id</th>
+        <th>Lab Name</th>
+      </tr>
+    </thead>
+   <c:forEach var = "lab" items="${labList}">
+   <tbody>
+      <tr>
+       <td><c:out value="${lab.getLabId()}"/></td>
+    <td><c:out value="${lab.getLabName()}"/></td>
+    <td><c:out value="${packages.getPackageDuration()}"/></td>
+    <td><c:out value="${packages.isFoodIncluded()}"/></td>
+    <td><a href="http://localhost:8082/addStudent?labId=${lab.getLabId()}" class="btn btn-info" role="button">Add Student</a></td>
+      </tr>
+     </tbody>
+      </c:forEach>
+  </table>     
+        </div>
+         <button type="submit"   class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> AddCollege</button>
     </form>
   </div>
 </body>
