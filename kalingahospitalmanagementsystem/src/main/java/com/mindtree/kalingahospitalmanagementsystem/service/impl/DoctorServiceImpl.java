@@ -65,7 +65,7 @@ public class DoctorServiceImpl implements DoctorService {
 	public List<DoctorDto> displayDoctorsByPatientCount() {
 		// TODO Auto-generated method stub
 		List<Doctor> doctors=new ArrayList<Doctor>();
-		    doctorRepository.findAll().stream().forEach(i->{i.getPatients().stream().forEach(j->{count++;});if(count>3) {doctors.add(i);}});
+		    doctorRepository.findAll().stream().forEach(i->{i.getPatients().stream().forEach(j->{count++;});if(count>3) {doctors.add(i);}count=0;});
 		    List<DoctorDto> doctorDtos=doctors.stream().map(i->convertEntityToDto(i)).collect(Collectors.toList());
 		    Collections.sort(doctorDtos);
 		return doctorDtos;
