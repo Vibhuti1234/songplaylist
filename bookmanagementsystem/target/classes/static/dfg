@@ -1,0 +1,20 @@
+@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		Passenger e = (Passenger) o;
+		int iAgeComaprison = Integer.compare(this.age, e.age);
+		int iTicketComparison=Double.compare(this.ticketCost,e.ticketCost);
+		int iNameComparison=passengerName.compareTo(e.passengerName);
+		if (iAgeComaprison!= 0)// Salaries are equal use name as comparison criteria
+		{
+			//  name comparison with rhs name
+			return iAgeComaprison;
+		}
+		else if(iAgeComaprison==0 && iTicketComparison!=0)
+		{// Now if salaries are not equal, return comparison of salries
+		return iTicketComparison;
+		}
+		else {
+			return iNameComparison;
+		}
+		}
